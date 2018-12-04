@@ -35,15 +35,6 @@ public class BookingDAOImpl implements BookingDAO {
         Session session = sessionFactory.getCurrentSession();
 
         Booking eBooking = (Booking) session.get(Booking.class, booking.getBookingID());
-
-        eBooking.setBookingID(booking.getBookingID());
-        eBooking.setCustomerID(eBooking.getCustomerID());
-        eBooking.setRoomID(eBooking.getRoomID());
-        eBooking.setBookingDate(eBooking.getBookingDate());
-        eBooking.setDateIN(eBooking.getDateIN());
-        eBooking.setDateOUT(eBooking.getDateOUT());
-        eBooking.setBill(eBooking.getBill());
-
-        session.save(eBooking);
+        session.update(eBooking);
     }
 }

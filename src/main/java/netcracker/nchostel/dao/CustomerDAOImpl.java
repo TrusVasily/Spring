@@ -37,13 +37,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         Customer eCustomer = (Customer) session.get(Customer.class, customer.getCustomerID());
 
-        eCustomer.setCustomerID(eCustomer.getCustomerID());
-        eCustomer.setFirstName(eCustomer.getFirstName());
-        eCustomer.setLastName(eCustomer.getLastName());
-        eCustomer.setAddress(eCustomer.getAddress());
-        eCustomer.setPhone(eCustomer.getPhone());
-        eCustomer.setPassport(eCustomer.getPassport());
-
-        session.save(eCustomer);
+        session.update(eCustomer);
     }
 }

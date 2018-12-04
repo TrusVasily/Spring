@@ -37,13 +37,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         Employee eEmployee = (Employee) session.get(Employee.class, Employee.getEmployeeID());
 
-        eEmployee.setEmployeeID(eEmployee.getEmployeeID());
-        eEmployee.setFirstName(eEmployee.getFirstName());
-        eEmployee.setLastName(eEmployee.getLastName());
-        eEmployee.setAddress(eEmployee.getAddress());
-        eEmployee.setPhone(eEmployee.getPhone());
-
-        session.save(eEmployee);
+        session.update(eEmployee);
     }
 }
 

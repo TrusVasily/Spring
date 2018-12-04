@@ -37,11 +37,6 @@ public class RoomDAOImpl implements RoomDAO {
 
         Room eRoom = (Room) session.get(Room.class, Room.getRoomID());
 
-        eRoom.setRoomID(eRoom.getRoomID());
-        eRoom.setRoomType(eRoom.getRoomType());
-        eRoom.setRoomDescription(eRoom.getRoomDescription());
-        eRoom.setHotelID(eRoom.getHotelID());
-
-        session.save(eRoom);
+        session.update(eRoom);
     }
 }

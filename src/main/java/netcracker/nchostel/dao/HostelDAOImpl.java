@@ -37,13 +37,6 @@ public class HostelDAOImpl implements HostelDAO {
 
         Hostel eHostel = (Hostel) session.get(Hostel.class, Hostel.getHostID());
 
-        eHostel.setHostID(eHostel.getHostID());
-        eHostel.setName(eHostel.getName());
-        eHostel.setAddress(eHostel.getAddress());
-        eHostel.setPhone(eHostel.getPhone());
-        eHostel.setCity(eHostel.getCity());
-        eHostel.setEmpoyeeID(eHostel.getEmpoyeeID());
-
-        session.save(eHostel);
+        session.update(eHostel);
     }
 }

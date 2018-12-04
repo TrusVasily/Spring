@@ -50,7 +50,7 @@ public class BookingController {
         return "redirect:/Booking";
     }
 
-    @RequestMapping(value = "/updateBooking", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateBooking/", method = RequestMethod.POST)
     public String updateBooking(@ModelAttribute("booking") Booking booking,
                                  BindingResult result) {
 

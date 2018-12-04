@@ -10,7 +10,6 @@
 
     <annotation-driven />
 
-    <!--  <resources mapping="/resources/**" location="/resources/" />     -->
 
     <beans:bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">

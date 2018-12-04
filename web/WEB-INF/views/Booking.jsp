@@ -83,7 +83,7 @@
                 <td>${booking.bill}</td>
 
                 <td><a href="deleteBooking/${booking.bookingID}">Delete</a></td>
-                <td> <a href="<c:url value='/updateBooking/${booking.bookingID}' />"> Edit</a> </td>
+                <td> <a href="updateBooking/${booking.bookingID}">Edit</a> </td>
             </tr>
         </c:forEach>
     </table>

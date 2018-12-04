@@ -37,10 +37,6 @@ public class RoomTypeDAOImpl implements RoomTypeDAO {
 
         RoomType eRoomType = (RoomType) session.get(RoomType.class, roomType.getRoomType());
 
-        eRoomType.setRoomType(eRoomType.getRoomType());
-        eRoomType.setRoomName(eRoomType.getRoomName());
-        eRoomType.setPrice(eRoomType.getPrice());
-
-        session.save(eRoomType);
+        session.update(eRoomType);
     }
 }
