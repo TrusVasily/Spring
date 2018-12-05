@@ -26,11 +26,6 @@ public class EmployeeController {
         return "employee";
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Employee";
-    }
-
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public String addEmployee(@ModelAttribute("employee") Employee employee,
                               BindingResult result) {

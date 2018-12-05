@@ -14,6 +14,7 @@ import java.util.Map;
 
 @Controller
 public class BookingController {
+
     @Autowired
     private BookingService bookingService;
 
@@ -23,18 +24,13 @@ public class BookingController {
         map.put("booking", new Booking());
         map.put("bookingList", bookingService.listBooking());
 
-        return "booking";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Booking";
+        return "Booking";
     }
 
     @RequestMapping(value = "/addBooking", method = RequestMethod.POST)
     public String addBooking(@ModelAttribute("booking") Booking booking) {
 
-        if(booking.getBookingID() == 0) {
+        if (booking.getBookingID() == 0) {
             bookingService.addBooking(booking);
         } else {
             bookingService.updateBooking(booking);
@@ -52,7 +48,7 @@ public class BookingController {
 
     @RequestMapping(value = "/updateBooking/", method = RequestMethod.POST)
     public String updateBooking(@ModelAttribute("booking") Booking booking,
-                                 BindingResult result) {
+                                BindingResult result) {
 
         bookingService.updateBooking(booking);
 

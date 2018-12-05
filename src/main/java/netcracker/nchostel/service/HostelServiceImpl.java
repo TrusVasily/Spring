@@ -3,10 +3,12 @@ package netcracker.nchostel.service;
 import netcracker.nchostel.dao.HostelDAO;
 import netcracker.nchostel.domain.Hostel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class HostelServiceImpl implements HostelService {
 
     @Autowired

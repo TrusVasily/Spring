@@ -26,14 +26,9 @@ public class RoomTypeController {
         return "roomType";
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/RoomType";
-    }
-
     @RequestMapping(value = "/addRoomType", method = RequestMethod.POST)
     public String addRoomType(@ModelAttribute("room") RoomType roomType,
-                          BindingResult result) {
+                              BindingResult result) {
 
         roomTypeService.addRoomType(roomType);
 
@@ -50,7 +45,7 @@ public class RoomTypeController {
 
     @RequestMapping(value = "/updateRoomType", method = RequestMethod.POST)
     public String updateRoomType(@ModelAttribute("roomType") RoomType roomType,
-                             BindingResult result) {
+                                 BindingResult result) {
 
         roomTypeService.updateRoomType(roomType);
 

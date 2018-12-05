@@ -26,11 +26,6 @@ public class RoomController {
         return "room";
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Room";
-    }
-
     @RequestMapping(value = "/addRoom", method = RequestMethod.POST)
     public String addRoom(@ModelAttribute("room") Room room,
                             BindingResult result) {

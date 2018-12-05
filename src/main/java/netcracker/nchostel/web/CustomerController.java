@@ -26,11 +26,6 @@ public class CustomerController {
         return "customer";
     }
 
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Customer";
-    }
-
     @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
     public String addCustomer(@ModelAttribute("customer") Customer customer,
                               BindingResult result) {

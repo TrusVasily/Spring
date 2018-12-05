@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Map;
 
 @Controller
-
 public class HostelController {
     @Autowired
     private HostelService hostelService;
