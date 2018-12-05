@@ -35,8 +35,7 @@ public class RoomDAOImpl implements RoomDAO {
     public void updateRoom(Room Room) {
         Session session = sessionFactory.getCurrentSession();
 
-        Room eRoom = (Room) session.get(Room.class, Room.getRoomID());
-
+        Room eRoom = session.get(Room.class, Room.getRoomID());
         session.update(eRoom);
     }
 }

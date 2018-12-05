@@ -11,6 +11,7 @@ import java.util.List;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -35,8 +36,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public void updateCustomer(Customer customer) {
         Session session = sessionFactory.getCurrentSession();
 
-        Customer eCustomer = (Customer) session.get(Customer.class, customer.getCustomerID());
-
+        Customer eCustomer = session.get(Customer.class, customer.getCustomerID());
         session.update(eCustomer);
     }
 }

@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public class BookingDAOImpl implements BookingDAO {
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -17,15 +19,16 @@ public class BookingDAOImpl implements BookingDAO {
         sessionFactory.getCurrentSession().save(booking);
     }
 
+
     @SuppressWarnings("unchecked")
     public List<Booking> listBooking() {
-       Session session = sessionFactory.getCurrentSession();
-       Query query = session.createQuery("FROM Booking");
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("FROM Booking");
         return query.list();
     }
 
     public void removeBooking(Integer id) {
-        Booking booking = (Booking) sessionFactory.getCurrentSession().load(Booking.class, id);
+        Booking booking = sessionFactory.getCurrentSession().load(Booking.class, id);
         if (null != booking) {
             sessionFactory.getCurrentSession().delete(booking);
         }
@@ -34,7 +37,7 @@ public class BookingDAOImpl implements BookingDAO {
     public void updateBooking(Booking booking) {
         Session session = sessionFactory.getCurrentSession();
 
-        Booking eBooking = (Booking) session.get(Booking.class, booking.getBookingID());
+        Booking eBooking = session.get(Booking.class, booking.getBookingID());
         session.update(eBooking);
     }
 }

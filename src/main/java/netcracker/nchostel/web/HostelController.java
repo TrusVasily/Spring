@@ -4,7 +4,6 @@ import netcracker.nchostel.domain.Hostel;
 import netcracker.nchostel.service.HostelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,20 +23,17 @@ public class HostelController {
         map.put("hostel", new Hostel());
         map.put("hostelList", hostelService.listHostel());
 
-        return "hostel";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Hostel";
+        return "Hostel";
     }
 
     @RequestMapping(value = "/addHostel", method = RequestMethod.POST)
-    public String addHostel(@ModelAttribute("hostel") Hostel hostel,
-                              BindingResult result) {
+    public String addHostel(@ModelAttribute("hostel") Hostel hostel) {
 
-        hostelService.addHostel(hostel);
-
+        if (hostel.getHostID() == 0) {
+            hostelService.addHostel(hostel);
+        } else {
+            hostelService.updateHostel(hostel);
+        }
         return "redirect:/Hostel";
     }
 
@@ -49,9 +45,8 @@ public class HostelController {
         return "redirect:/Hostel";
     }
 
-    @RequestMapping(value = "/updateHostel", method = RequestMethod.POST)
-    public String updateHostel(@ModelAttribute("hostel") Hostel hostel,
-                                 BindingResult result) {
+    @RequestMapping(value = "/updateHostel", method = {RequestMethod.POST, RequestMethod.GET})
+    public String updateHostel(@ModelAttribute("hostel") Hostel hostel) {
 
         hostelService.updateHostel(hostel);
 

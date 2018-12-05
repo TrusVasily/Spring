@@ -4,7 +4,6 @@ import netcracker.nchostel.domain.RoomType;
 import netcracker.nchostel.service.RoomTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,20 +22,17 @@ public class RoomTypeController {
         map.put("roomType", new RoomType());
         map.put("roomTypeList", roomTypeService.listRoomType());
 
-        return "roomType";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/RoomType";
+        return "RoomType";
     }
 
     @RequestMapping(value = "/addRoomType", method = RequestMethod.POST)
-    public String addRoomType(@ModelAttribute("room") RoomType roomType,
-                          BindingResult result) {
+    public String addRoomType(@ModelAttribute("room") RoomType roomType) {
 
-        roomTypeService.addRoomType(roomType);
-
+        if (roomType.getRoomType() == " ") {
+            roomTypeService.addRoomType(roomType);
+        } else {
+            roomTypeService.updateRoomType(roomType);
+        }
         return "redirect:/RoomType";
     }
 
@@ -48,9 +44,8 @@ public class RoomTypeController {
         return "redirect:/RoomType";
     }
 
-    @RequestMapping(value = "/updateRoomType", method = RequestMethod.POST)
-    public String updateRoomType(@ModelAttribute("roomType") RoomType roomType,
-                             BindingResult result) {
+    @RequestMapping(value = "/updateRoomType", method = {RequestMethod.POST, RequestMethod.GET})
+    public String updateRoomType(@ModelAttribute("roomType") RoomType roomType) {
 
         roomTypeService.updateRoomType(roomType);
 

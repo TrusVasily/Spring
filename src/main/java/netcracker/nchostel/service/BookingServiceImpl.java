@@ -1,12 +1,12 @@
 package netcracker.nchostel.service;
 
-import java.util.List;
-
 import netcracker.nchostel.dao.BookingDAO;
 import netcracker.nchostel.domain.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {

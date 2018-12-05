@@ -4,7 +4,6 @@ import netcracker.nchostel.domain.Customer;
 import netcracker.nchostel.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +13,7 @@ import java.util.Map;
 
 @Controller
 public class CustomerController {
+
     @Autowired
     private CustomerService customerService;
 
@@ -23,19 +23,17 @@ public class CustomerController {
         map.put("customer", new Customer());
         map.put("customerList", customerService.listCustomer());
 
-        return "customer";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Customer";
+        return "Customer";
     }
 
     @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
-    public String addCustomer(@ModelAttribute("customer") Customer customer,
-                              BindingResult result) {
+    public String addCustomer(@ModelAttribute("customer") Customer customer) {
 
-        customerService.addCustomer(customer);
+        if (customer.getCustomerID() == 0) {
+            customerService.addCustomer(customer);
+        } else {
+            customerService.updateCustomer(customer);
+        }
 
         return "redirect:/Customer";
     }
@@ -48,9 +46,8 @@ public class CustomerController {
         return "redirect:/Customer";
     }
 
-    @RequestMapping(value = "/updateCustomer", method = RequestMethod.POST)
-    public String updateCustomer(@ModelAttribute("customer") Customer customer,
-                              BindingResult result) {
+    @RequestMapping(value = "/updateCustomer", method = {RequestMethod.POST, RequestMethod.GET})
+    public String updateCustomer(@ModelAttribute("customer") Customer customer) {
 
         customerService.updateCustomer(customer);
 

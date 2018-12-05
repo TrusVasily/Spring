@@ -12,18 +12,39 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
-    <title>Title</title>
+    <style type="text/css">
+        td {
+
+            border: 2px solid black;
+        }
+        tr:hover {background-color: #f5f5f5;}
+        tr:nth-child(even) {background-color: #f2f2f2;}
+
+        input[type=submit] {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <title>Customer</title>
 </head>
 <body>
-<jsp:include page="Menu.jsp"></jsp:include>
 
-<form:form method="post" action="addCustomer" commandName="customer">
+<form:form method="post" action="addCustomer" modelAttribute="customer">
 
     <table>
         <tr>
             <td><form:label path="CustomerID"> Customer ID </form:label></td>
-            <td><form:input path="customerID" /></td>
+            <td><form:input path="customerID" readonly="true" disabled="true"/>
+                    <form:hidden path="customerID"/>
         </tr>
+
         <tr>
             <td><form:label path="FirstName"> First Name </form:label></td>
             <td><form:input path="firstName" /></td>
@@ -47,7 +68,7 @@
 
         <tr>
             <td colspan="2">
-                <input type="submit" value="Add Booking" /></td>
+                <input type="submit" value="Add Customer" /></td>
         </tr>
     </table>
 </form:form>
@@ -62,8 +83,8 @@
             <td>Address</td>
             <td>Phone</td>
             <td>Passport</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>Delete</td>
+            <td>Edit</td>
 
         </tr>
         <c:forEach items="${customerList}" var="customer">
@@ -76,7 +97,7 @@
                 <td>${customer.passport}</td>
 
                 <td><a href="deleteCustomer/${customer.customerID}">Delete</a></td>
-                <td> <form action="updateCustomr.jsp" method="post"></form> Update</td>
+                <td><a href="updateCustomer">Update</a> </td>
             </tr>
         </c:forEach>
     </table>

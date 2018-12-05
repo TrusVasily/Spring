@@ -4,7 +4,6 @@ import netcracker.nchostel.domain.Employee;
 import netcracker.nchostel.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,19 +22,17 @@ public class EmployeeController {
         map.put("employee", new Employee());
         map.put("employeeList", employeeService.listEmployee());
 
-        return "employee";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-        return "redirect:/Employee";
+        return "Employee";
     }
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-    public String addEmployee(@ModelAttribute("employee") Employee employee,
-                              BindingResult result) {
+    public String addEmployee(@ModelAttribute("employee") Employee employee) {
 
-        employeeService.addEmployee(employee);
+        if (employee.getEmployeeID() == 0) {
+            employeeService.addEmployee(employee);
+        } else {
+            employeeService.updateEmployee(employee);
+        }
 
         return "redirect:/Employee";
     }
@@ -48,9 +45,8 @@ public class EmployeeController {
         return "redirect:/Employee";
     }
 
-    @RequestMapping(value = "/updateEmployee", method = RequestMethod.POST)
-    public String updateEmployee(@ModelAttribute("employee") Employee employee,
-                                 BindingResult result) {
+    @RequestMapping(value = "/updateEmployee", method = {RequestMethod.POST, RequestMethod.GET})
+    public String updateEmployee(@ModelAttribute("employee") Employee employee) {
 
         employeeService.updateEmployee(employee);
 

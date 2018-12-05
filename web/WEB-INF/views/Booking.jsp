@@ -12,28 +12,41 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
+    <style type="text/css">
+        td {
+
+            border: 2px solid black;
+        }
+        tr:hover {background-color: #f5f5f5;}
+        tr:nth-child(even) {background-color: #f2f2f2;}
+
+        input[type=submit] {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
     <title>Booking</title>
 </head>
 <body>
-
-<jsp:include page="Menu.jsp"></jsp:include>
-
-<form:form method="post" action="addBooking" commandName="booking">
+<h2> HOSTEL </h2>
+<form:form method="post" action="addBooking" modelAttribute="booking">
 
     <table>
+
         <tr>
-            <td><form:label path="BookingID"> Booking ID </form:label></td>
-            <td><form:input path="bookingID" /></td>
+            <td><form:label path="BookingID">Booking ID </form:label></td>
+            <td><form:input path="bookingID" readonly="true" disabled="true"/>
+                <form:hidden path="bookingID"/>
+            </td>
         </tr>
-        <tr>
-            <td><form:label path="CustomerID"> Customer ID </form:label></td>
-            <td><form:input path="customerID" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="RoomID"> Room ID </form:label></td>
-            <td><form:input path="roomID" /></td>
-        </tr>
+
         <tr>
             <td><form:label path="BookingDate">Booking Date </form:label></td>
             <td><form:input path="bookingDate" /></td>
@@ -64,12 +77,12 @@
             <td>BookingID</td>
             <td>CustomerID</td>
             <td>RoomID</td>
-            <td >BookingDate</td>
+            <td>BookingDate</td>
             <td>DateIN</td>
             <td>DateOUT</td>
             <td>Bill</td>
-            <td>Edit;</td>
-            <td>Delete;</td>
+            <td>Delete</td>
+            <td>Edit</td>
 
         </tr>
         <c:forEach items="${bookingList}" var="booking">
@@ -83,7 +96,7 @@
                 <td>${booking.bill}</td>
 
                 <td><a href="deleteBooking/${booking.bookingID}">Delete</a></td>
-                <td> <a href="updateBooking/${booking.bookingID}">Edit</a> </td>
+                <td> <a href="updateBooking">Edit</a> </td>
             </tr>
         </c:forEach>
     </table>

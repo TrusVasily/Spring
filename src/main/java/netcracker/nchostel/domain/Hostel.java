@@ -14,8 +14,12 @@ public class Hostel implements Serializable {
     private String Name;
     @Column(name = "Address")
     private String Address;
+    @Column (name = "Phone")
+    private String Phone;
     @Column(name = "City")
     private String City;
+    @Column (name = "EmployeeID")
+    private int EmployeeID;
 
     public String getCity() {
         return City;
@@ -24,9 +28,6 @@ public class Hostel implements Serializable {
     public void setCity(String city) {
         City = city;
     }
-
-    private String Phone;
-    private int EmpoyeeID;
 
     public int getHostID() {
         return HostID;
@@ -60,12 +61,12 @@ public class Hostel implements Serializable {
         Phone = phone;
     }
 
-    public int getEmpoyeeID() {
-        return EmpoyeeID;
+    public int getEmployeeID() {
+        return EmployeeID;
     }
 
-    public void setEmpoyeeID(int empoyeeID) {
-        EmpoyeeID = empoyeeID;
+    public void setEmployeeID(int employeeID) {
+        EmployeeID = employeeID;
     }
 
 
