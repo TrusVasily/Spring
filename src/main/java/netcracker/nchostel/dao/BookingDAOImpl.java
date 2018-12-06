@@ -16,7 +16,7 @@ public class BookingDAOImpl implements BookingDAO {
     private SessionFactory sessionFactory;
 
     public void addBooking(Booking booking) {
-        sessionFactory.getCurrentSession().save(booking);
+        sessionFactory.getCurrentSession().persist(booking);
     }
 
 
@@ -37,6 +37,6 @@ public class BookingDAOImpl implements BookingDAO {
     public void updateBooking(Booking booking) {
         Session session = sessionFactory.getCurrentSession();
         Booking eBooking = session.get(Booking.class, booking.getBookingID());
-        session.update(eBooking);
+        session.saveOrUpdate(eBooking);
     }
 }

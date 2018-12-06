@@ -15,7 +15,7 @@ public class RoomDAOImpl implements RoomDAO {
     private SessionFactory sessionFactory;
 
     public void addRoom(Room room) {
-        sessionFactory.getCurrentSession().save(room);
+        sessionFactory.getCurrentSession().persist(room);
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +35,6 @@ public class RoomDAOImpl implements RoomDAO {
     public void updateRoom(Room Room) {
         Session session = sessionFactory.getCurrentSession();
         Room eRoom = session.get(Room.class, Room.getRoomID());
-        session.update(eRoom);
+        session.saveOrUpdate(eRoom);
     }
 }

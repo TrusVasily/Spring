@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <td><form:label path="EmployeeID">Employee ID</form:label></td>
-            <td><form:input path="empoyeeID" /></td>
+            <td><form:input path="employeeID" /></td>
         </tr>
         <tr>
             <td colspan="2">

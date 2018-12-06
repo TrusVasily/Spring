@@ -16,7 +16,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     private SessionFactory sessionFactory;
 
     public void addCustomer(Customer customer) {
-        sessionFactory.getCurrentSession().save(customer);
+        sessionFactory.getCurrentSession().persist(customer);
     }
 
     @SuppressWarnings("unchecked")
@@ -36,6 +36,6 @@ public class CustomerDAOImpl implements CustomerDAO {
     public void updateCustomer(Customer customer) {
         Session session = sessionFactory.getCurrentSession();
         Customer eCustomer = session.get(Customer.class, customer.getCustomerID());
-        session.update(eCustomer);
+        session.saveOrUpdate(eCustomer);
     }
 }

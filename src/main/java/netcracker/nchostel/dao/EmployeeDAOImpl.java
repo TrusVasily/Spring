@@ -15,7 +15,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     private SessionFactory sessionFactory;
 
     public void addEmployee(Employee employee) {
-        sessionFactory.getCurrentSession().save(employee);
+        sessionFactory.getCurrentSession().persist(employee);
     }
 
     @SuppressWarnings("unchecked")
@@ -35,7 +35,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public void updateEmployee(Employee Employee) {
         Session session = sessionFactory.getCurrentSession();
         Employee eEmployee = session.get(Employee.class, Employee.getEmployeeID());
-        session.update(eEmployee);
+        session.saveOrUpdate(eEmployee);
     }
 }
 

@@ -15,7 +15,7 @@ public class RoomTypeDAOImpl implements RoomTypeDAO {
     private SessionFactory sessionFactory;
 
     public void addRoomType(RoomType roomType) {
-        sessionFactory.getCurrentSession().save(roomType);
+        sessionFactory.getCurrentSession().persist(roomType);
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +35,6 @@ public class RoomTypeDAOImpl implements RoomTypeDAO {
     public void updateRoomType(RoomType roomType) {
         Session session = sessionFactory.getCurrentSession();
         RoomType eRoomType = session.get(RoomType.class, roomType.getRoomType());
-        session.update(eRoomType);
+        session.saveOrUpdate(eRoomType);
     }
 }
