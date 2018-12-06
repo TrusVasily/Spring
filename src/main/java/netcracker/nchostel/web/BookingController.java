@@ -41,7 +41,6 @@ public class BookingController {
     public String deleteBooking(@PathVariable("bookingID") Integer bookingID) {
 
         bookingService.removeBooking(bookingID);
-
         return "redirect:/Booking";
     }
 
@@ -49,7 +48,6 @@ public class BookingController {
     public String updateBooking(@ModelAttribute("booking") Booking booking) {
 
         bookingService.updateBooking(booking);
-
         return "redirect:/Booking";
     }
 }

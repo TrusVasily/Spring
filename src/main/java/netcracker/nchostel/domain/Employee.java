@@ -21,7 +21,6 @@ public class Employee implements Serializable {
     public int getEmployeeID() {
         return EmployeeID;
     }
-
     public void setEmployeeID(int employeeID) {
         EmployeeID = employeeID;
     }

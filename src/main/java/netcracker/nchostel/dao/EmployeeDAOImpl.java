@@ -34,7 +34,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     public void updateEmployee(Employee Employee) {
         Session session = sessionFactory.getCurrentSession();
-
         Employee eEmployee = session.get(Employee.class, Employee.getEmployeeID());
         session.update(eEmployee);
     }

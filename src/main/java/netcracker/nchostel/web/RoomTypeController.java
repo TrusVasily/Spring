@@ -48,7 +48,6 @@ public class RoomTypeController {
     public String updateRoomType(@ModelAttribute("roomType") RoomType roomType) {
 
         roomTypeService.updateRoomType(roomType);
-
         return "redirect:/RoomType";
     }
 }

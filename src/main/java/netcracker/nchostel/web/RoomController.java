@@ -40,7 +40,6 @@ public class RoomController {
     public String deleteRoom(@PathVariable("roomID") Integer roomID) {
 
         roomService.removeRoom(roomID);
-
         return "redirect:/Room";
     }
 

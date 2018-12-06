@@ -40,7 +40,6 @@ public class HostelController {
     public String deleteHostel(@PathVariable("hostID") Integer hostID) {
 
         hostelService.removeHostel(hostID);
-
         return "redirect:/Hostel";
     }
 
@@ -48,7 +47,6 @@ public class HostelController {
     public String updateHostel(@ModelAttribute("hostel") Hostel hostel) {
 
         hostelService.updateHostel(hostel);
-
         return "redirect:/Hostel";
     }
 }

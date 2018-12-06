@@ -35,7 +35,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     public void updateCustomer(Customer customer) {
         Session session = sessionFactory.getCurrentSession();
-
         Customer eCustomer = session.get(Customer.class, customer.getCustomerID());
         session.update(eCustomer);
     }

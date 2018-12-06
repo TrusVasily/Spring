@@ -34,7 +34,6 @@ public class HostelDAOImpl implements HostelDAO {
 
     public void updateHostel(Hostel Hostel) {
         Session session = sessionFactory.getCurrentSession();
-
         Hostel eHostel = session.get(Hostel.class, Hostel.getHostID());
         session.update(eHostel);
     }

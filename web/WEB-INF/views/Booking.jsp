@@ -21,7 +21,7 @@
         tr:nth-child(even) {background-color: #f2f2f2;}
 
         input[type=submit] {
-            background-color: white;
+            background-color: whitesmoke;
             color: black;
             border: 2px solid #4CAF50;
         }

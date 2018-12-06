@@ -42,7 +42,6 @@ public class CustomerController {
     public String deleteCustomer(@PathVariable("customerID") Integer customerID) {
 
         customerService.removeCustomer(customerID);
-
         return "redirect:/Customer";
     }
 
@@ -50,7 +49,6 @@ public class CustomerController {
     public String updateCustomer(@ModelAttribute("customer") Customer customer) {
 
         customerService.updateCustomer(customer);
-
         return "redirect:/Customer";
     }
 }

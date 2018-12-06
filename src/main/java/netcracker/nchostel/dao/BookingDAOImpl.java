@@ -36,7 +36,6 @@ public class BookingDAOImpl implements BookingDAO {
 
     public void updateBooking(Booking booking) {
         Session session = sessionFactory.getCurrentSession();
-
         Booking eBooking = session.get(Booking.class, booking.getBookingID());
         session.update(eBooking);
     }

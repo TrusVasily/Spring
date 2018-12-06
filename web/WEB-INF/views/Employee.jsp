@@ -21,7 +21,7 @@
         tr:nth-child(even) {background-color: #f2f2f2;}
 
         input[type=submit] {
-            background-color: white;
+            background-color: whitesmoke;
             color: black;
             border: 2px solid #4CAF50;
         }
@@ -41,8 +41,7 @@
 
         <tr>
             <td><form:label path="EmployeeID"> Employee ID </form:label></td>
-            <td><form:input path="employeeID" readonly="true" disabled="true"/>
-                    <form:hidden path="employeeID"/>
+            <td><form:input path="employeeID" />
         </tr>
 
         <tr>

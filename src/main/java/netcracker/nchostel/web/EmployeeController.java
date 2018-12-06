@@ -41,7 +41,6 @@ public class EmployeeController {
     public String deleteEmployee(@PathVariable("employeeID") Integer employeeID) {
 
         employeeService.removeEmployee(employeeID);
-
         return "redirect:/Employee";
     }
 
@@ -49,7 +48,6 @@ public class EmployeeController {
     public String updateEmployee(@ModelAttribute("employee") Employee employee) {
 
         employeeService.updateEmployee(employee);
-
         return "redirect:/Employee";
     }
 }
