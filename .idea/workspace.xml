@@ -158,8 +158,8 @@
       <file leaf-file-name="Employee.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/Employee.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+            <state relative-caret-position="-20">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -546,7 +546,7 @@
       <workItem from="1543949188993" duration="7615000" />
       <workItem from="1544023941618" duration="2327000" />
       <workItem from="1544028839194" duration="1110000" />
-      <workItem from="1544030163130" duration="22021000" />
+      <workItem from="1544030163130" duration="22347000" />
     </task>
     <task id="LOCAL-00001" summary="com 1">
       <created>1543840215696</created>
@@ -587,7 +587,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129398000" />
+    <option name="totallyTimeSpent" value="129724000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,10 +599,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.38880485" side_tool="true" visible="true" weight="0.2254902" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.3570348" side_tool="true" visible="true" weight="0.41503268" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32843137" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
@@ -619,10 +620,10 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="1" weight="0.32843137" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.64372164" weight="0.41503268" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.6429652" visible="true" weight="0.41503268" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.72541606" weight="0.27941176" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.61119515" visible="true" weight="0.2254902" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.61119515" weight="0.2254902" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.8321168" visible="true" weight="0.25416037" />
       <window_info id="Web" order="0" sideWeight="0.16788322" side_tool="true" weight="0.295764" />
@@ -1114,8 +1115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/Employee.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="-20">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1126,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited />
+          <last-edited>SpringHibernate:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1138,7 +1139,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Spring (SpringHibernate)|Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1161,7 +1162,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>1.8 (1)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1186,7 +1187,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
